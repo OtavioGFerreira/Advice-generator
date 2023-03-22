@@ -1,3 +1,4 @@
+const button = document.getElementById("button")
 const title = document.getElementById("title");
 const description = document.getElementById("description");
 
@@ -11,10 +12,11 @@ async function showAdvice() {
   const advice = await generateAdvice();
   const adviceNumber = advice.slip.id;
   const adviceText = advice.slip.advice;
-  document.getElementById("title").textContent = adviceNumber;
-  document.getElementById("description").textContent = adviceText;
+
+  title.textContent = adviceNumber;
+  description.textContent = adviceText;
 }
 
-document.getElementById("button").addEventListener("click", () => {
+button.addEventListener("click", () => {
   showAdvice();
 });
